@@ -19,3 +19,18 @@
 <!-- <h3 [style.color]="hasError? 'red' : 'green' ">Style binding</h3> -->
 <!-- <h3 [style.color]="highlight">Style binding</h3> -->
 <h3 [ngStyle]="manageStyle"> Style binding using ng directive</h3>
+<br>
+
+<!-- Event binding -->
+<h2>Event binding</h2>
+<!-- <button (click)="Onclick($event)">Test</button> <br> {{event_bind}} -->
+<button (click)="event_bind = 'test works !!!'">test</button> {{event_bind}}
+
+<!-- Template reference variable -->
+<h2>Template reference variable</h2>
+<input #input type="text">
+<button (click)="display(input.value)">Display</button><br>
+
+<!-- Two way binding -->
+<h2>Two way binding</h2>
+<input [(ngModel)]="name" type="text"> {{name}}

@@ -25,11 +25,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
+  public name = ""
   public text = "WELCOME TO SAMPLE ANGULAR WEB APP  !"
   public url = window.location.href
   public myId = "328"
   public cbind = "class-bind"
   public highlight = "orange"
+  public event_bind = " "
 
   public isDisabled = true
   public hasError = false
@@ -50,4 +52,12 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  Onclick(event:any){
+    console.log(event)
+    this.event_bind = "test works"
+  }
+
+  display(value:any){
+    console.log(value)
+  }
 }
