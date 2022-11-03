@@ -1,0 +1,26 @@
+.test-txt {
+    color: black;
+    font-weight: bold;
+}
+
+.test-txt {
+    animation: change 1s infinite;
+}
+
+@keyframes change {
+    from {
+        color: red
+    }
+    to {
+        color: black
+    }
+}
+
+.class-bind {
+    color: greenyellow;
+    text-align: center;
+}
+
+.text-danger {
+    color: red;
+}

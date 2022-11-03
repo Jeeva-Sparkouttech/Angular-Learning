@@ -1,0 +1,21 @@
+<div class="test-txt">
+    {{text}}
+</div>
+<!-- interpolation -->
+<!-- <input id="{{myId}}" type=text value="text1"> -->
+
+<!-- property binding syntax-->
+<!-- <input [disabled]="isDisabled" [id]="myId" type=text value="text2"> -->
+<input bind-disabled="isDisabled" [id]="myId" type=text value="text2">
+
+<!-- class binding -->
+<!-- <h3 [class]="cbind">Class binding</h3> -->
+<!--when hasError is true the class works -->
+<!-- <h3 [class.text-danger]="hasError">Class binding syntax 2</h3> -->
+<h3 [ngClass]="manageClass">Class binding using ngClass directive</h3>
+
+<!-- Style binding -->
+<!-- <h3 [style.color]="'red'">Style binding</h3> -->
+<!-- <h3 [style.color]="hasError? 'red' : 'green' ">Style binding</h3> -->
+<!-- <h3 [style.color]="highlight">Style binding</h3> -->
+<h3 [ngStyle]="manageStyle"> Style binding using ng directive</h3>
