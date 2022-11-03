@@ -1,36 +1,99 @@
+<h2>Interpolation</h2>
 <div class="test-txt">
     {{text}}
 </div>
-<!-- interpolation -->
-<!-- <input id="{{myId}}" type=text value="text1"> -->
+<p>___________________________________________________________________________________________</p>
 
+<h2>Property binding</h2>
+<!-- interpolation -->
+<input id="{{myId}}" type=text value="text1">
 <!-- property binding syntax-->
 <!-- <input [disabled]="isDisabled" [id]="myId" type=text value="text2"> -->
 <input bind-disabled="isDisabled" [id]="myId" type=text value="text2">
+<p>___________________________________________________________________________________________</p>
 
 <!-- class binding -->
+<h2>Class binding</h2>
 <!-- <h3 [class]="cbind">Class binding</h3> -->
 <!--when hasError is true the class works -->
 <!-- <h3 [class.text-danger]="hasError">Class binding syntax 2</h3> -->
 <h3 [ngClass]="manageClass">Class binding using ngClass directive</h3>
+<p>___________________________________________________________________________________________</p>
 
 <!-- Style binding -->
+<h2>Style binding</h2>
 <!-- <h3 [style.color]="'red'">Style binding</h3> -->
 <!-- <h3 [style.color]="hasError? 'red' : 'green' ">Style binding</h3> -->
 <!-- <h3 [style.color]="highlight">Style binding</h3> -->
 <h3 [ngStyle]="manageStyle"> Style binding using ng directive</h3>
-<br>
+<p>___________________________________________________________________________________________</p>
 
 <!-- Event binding -->
 <h2>Event binding</h2>
 <!-- <button (click)="Onclick($event)">Test</button> <br> {{event_bind}} -->
 <button (click)="event_bind = 'test works !!!'">test</button> {{event_bind}}
+<p>___________________________________________________________________________________________</p>
 
 <!-- Template reference variable -->
 <h2>Template reference variable</h2>
+<p>See console log</p>
 <input #input type="text">
 <button (click)="display(input.value)">Display</button><br>
+<p>___________________________________________________________________________________________</p>
 
 <!-- Two way binding -->
 <h2>Two way binding</h2>
 <input [(ngModel)]="name" type="text"> {{name}}
+<p>___________________________________________________________________________________________</p>
+
+<!-- Structural directives ngIf-->
+<h2>Structural directives - ngIf</h2>
+
+<h3>Switch : {{switch}}</h3>
+<h3 *ngIf="switch"> Hello welcome!!! </h3>
+<button (click)="ngIfVisible()">enable</button>
+<button (click)="ngIfInvisible()">disable</button>
+
+<p>--------------</p>
+
+<div *ngIf="switch; then thenblock ; else elseblock"></div>
+<ng-template #thenblock>
+    <h3>Jeeva</h3>
+</ng-template>
+<ng-template #elseblock>
+    <h3>Name is hidden</h3>
+</ng-template>
+<p>___________________________________________________________________________________________</p>
+
+<!-- Structural directives ngSwitch-->
+<h2>Structural directives - ngSwitch</h2>
+<input #clr type="text">
+<button (click)="colorpick(clr.value)"> enter </button>
+<div [ngSwitch]="color">
+    <h3 [style.color]="'red'" *ngSwitchCase="'red'">picked red</h3>
+    <h3 [style.color]="'orange'" *ngSwitchCase="'orange'">picked orange</h3>
+    <h3 [style.color]="'blue'" *ngSwitchCase="'blue'">picked blue</h3>
+    <h3 *ngSwitchDefault>Color not available</h3>
+</div>
+<p>___________________________________________________________________________________________</p>
+
+<!-- Structural directives ngFor-->
+<h2>Structural directives - ngFor</h2>
+<div *ngFor="let i of list">
+    <h3>{{i}}</h3>
+</div>
+
+<!-- <div *ngFor="let i of list ; last as l">
+    <h3>{{l}} - {{i}}</h3>
+</div>
+<div *ngFor="let i of list ; first as f">
+    <h3>{{f}} - {{i}}</h3> 
+</div> -->
+
+<!-- <div *ngFor="let i of list ; even as e">
+    <h3>{{e}} - {{i}}</h3>
+</div>
+<div *ngFor="let l of list ; index as i">
+    <h3>{{i}} - {{l}}</h3>
+</div> -->
+<p>___________________________________________________________________________________________</p>

@@ -1,6 +1,7 @@
 .test-txt {
     color: black;
     font-weight: bold;
+    text-align: center;
 }
 
 .test-txt {
@@ -16,9 +17,8 @@
     }
 }
 
-.class-bind {
-    color: greenyellow;
-    text-align: center;
+.class-bind:hover {
+    color: rebeccapurple;
 }
 
 .text-danger {

@@ -32,14 +32,18 @@ export class TestComponent implements OnInit {
   public cbind = "class-bind"
   public highlight = "orange"
   public event_bind = " "
+  public color = ""
 
   public isDisabled = true
   public hasError = false
   public test = true
+  public switch = false
+  
+  public list = [1,2,3,4,5,6]
 
   public manageClass = {
     "class-bind" : this.test,
-    "text-danger" : !this.hasError
+    "text-danger" : this.hasError
   }
 
   public manageStyle ={
@@ -59,5 +63,18 @@ export class TestComponent implements OnInit {
 
   display(value:any){
     console.log(value)
+  }
+
+  colorpick(val:any){
+    this.color = val
+    console.log(val)
+
+  }
+
+  ngIfVisible(){
+    this.switch = true
+  }
+  ngIfInvisible(){
+    this.switch = false
   }
 }
