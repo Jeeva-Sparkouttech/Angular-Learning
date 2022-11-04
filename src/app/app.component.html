@@ -1,1 +1,2 @@
-<app-test></app-test>
+<app-test (childEvent)="message=$event" [parentData]="data"></app-test>
+<h3>{{message}}</h3>

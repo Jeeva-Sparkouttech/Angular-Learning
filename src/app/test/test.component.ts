@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-test',//can use it with html tag <app-test></app-test>
@@ -24,9 +24,15 @@ import { Component, OnInit } from '@angular/core';
   // `]
 })
 export class TestComponent implements OnInit {
+  //component interaction
+  @Input() public parentData:any //syntax1
+  @Input('parentData') public inputData:any //syntax2
+
+  @Output() public childEvent = new EventEmitter()
 
   public name = ""
   public text = "WELCOME TO SAMPLE ANGULAR WEB APP  !"
+  public pipe = "Different kinds of pipes"
   public url = window.location.href
   public myId = "328"
   public cbind = "class-bind"
@@ -41,6 +47,8 @@ export class TestComponent implements OnInit {
   
   public list = [1,2,3,4,5,6]
 
+  public date = new Date()
+
   public manageClass = {
     "class-bind" : this.test,
     "text-danger" : this.hasError
@@ -49,6 +57,13 @@ export class TestComponent implements OnInit {
   public manageStyle ={
      color: this.highlight,
      fontStyle : "italic" 
+  }
+
+  public json_pipe = {
+    "nickName" : "Jeeva",
+    "initial" : "B",
+    "age" : "21",
+    "gender" : "male"
   }
 
   constructor() { }
@@ -68,12 +83,16 @@ export class TestComponent implements OnInit {
   colorpick(val:any){
     this.color = val
     console.log(val)
+  }
 
+  fireEvent(){
+    this.childEvent.emit('output data from child to parent')
   }
 
   ngIfVisible(){
     this.switch = true
   }
+
   ngIfInvisible(){
     this.switch = false
   }
