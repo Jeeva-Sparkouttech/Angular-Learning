@@ -2,6 +2,7 @@
 <!-- <ul *ngFor="let val of employees">
     <li>{{val.name}}</li>
 </ul> -->
+<h3>{{errMessage}}</h3>
 <ul *ngFor="let det of employees.data ; index as i">
     <li>{{i+1}}&nbsp;&nbsp;&nbsp;{{det.first_name}}&nbsp;{{det.last_name}}</li>
 </ul>
