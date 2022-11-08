@@ -2,15 +2,17 @@
 </app-test>
 <h2>Services - Dependency Injection DI</h2>
 <h2>Dependency Injection - Fetching data using HTTP</h2>
-<app-employee-list></app-employee-list>
+<!-- <app-employee-list></app-employee-list> -->
 <app-employee-detail></app-employee-detail>
 <p>____________________________________________________________________________________________</p>
 <h2>Routing and navigation</h2>
-<router-outlet>
-    <nav>
-        <a routerLink="/employeeList" routerLinkActive="active">Employee name list</a> <br><br>
-        <a routerLink="/employeeDetails" routerLinkActive="active">Employee details</a>
-    </nav>
-</router-outlet>
+<nav>
+    <a routerLink="/employeeList" routerLinkActive="active">Employee name list</a> <br><br>
+    <a routerLink="/employeeDetails" routerLinkActive="active">Employee details</a>
+</nav>
+<p>____________________________________________________________________________________________</p>
+<h2>Route parameter</h2>
+<a routerLink="/jobDetails" routerLinkActive="active">Job list</a>
+<router-outlet></router-outlet>
 <p>**********************************************</p>
 <h3>{{message}}</h3>

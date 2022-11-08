@@ -4,10 +4,14 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppComponent } from './app.component';
+import { JobDetailComponent } from './job-detail/job-detail.component';
+import { JobListComponent } from './job-list/job-list.component';
 
 const routes: Routes = [{path :'',component:AppComponent,pathMatch:'full'}
   ,{path:'employeeDetails' , component : EmployeeDetailComponent},
 {path:'employeeList' , component : EmployeeListComponent},
+{path:'jobDetails',component:JobListComponent},
+{path : 'jobDetails/:id',component:JobDetailComponent},
 {path:"**",component:PageNotFoundComponent}];
 
 @NgModule({
@@ -15,4 +19,4 @@ const routes: Routes = [{path :'',component:AppComponent,pathMatch:'full'}
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [EmployeeDetailComponent,EmployeeListComponent]
+export const routingComponents = [EmployeeDetailComponent,EmployeeListComponent,JobDetailComponent]
