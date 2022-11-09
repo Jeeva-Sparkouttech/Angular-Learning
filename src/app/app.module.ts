@@ -9,6 +9,7 @@ import { EmployeeService } from './employee.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { JobListComponent } from './job-list/job-list.component';
+import { JobOverviewComponent } from './job-overview/job-overview.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { JobListComponent } from './job-list/job-list.component';
     routingComponents,
     PageNotFoundComponent,
     JobListComponent,
+    JobOverviewComponent,
   ],
   imports: [
     BrowserModule,

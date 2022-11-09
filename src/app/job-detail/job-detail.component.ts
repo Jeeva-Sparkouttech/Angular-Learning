@@ -7,6 +7,8 @@ import { ActivatedRoute,Router,ParamMap } from '@angular/router';
     <p>
       You have clicked the job with id {{departmentId}} 
     </p>
+    <p><button (click)="showOverview()">overview</button></p>
+    <router-outlet></router-outlet>
     <div>
       <!-- <a (click)="onPrevious()">previous</a> <br><br>
       <a (click)="onNext()">next</a> -->
@@ -48,4 +50,8 @@ export class JobDetailComponent implements OnInit {
   //   this.router.navigate(["/jobDetails",nextId])    
   // }
   // }
+
+  showOverview(){
+    this.router.navigate(['overview'],{relativeTo:this.route})
+  }
 }
