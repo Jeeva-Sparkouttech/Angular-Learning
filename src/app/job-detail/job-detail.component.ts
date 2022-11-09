@@ -8,9 +8,10 @@ import { ActivatedRoute,Router,ParamMap } from '@angular/router';
       You have clicked the job with id {{departmentId}} 
     </p>
     <div>
-      <a (click)="onPrevious()">previous</a> <br><br>
-      <a (click)="onNext()">next</a>
+      <!-- <a (click)="onPrevious()">previous</a> <br><br>
+      <a (click)="onNext()">next</a> -->
     </div>
+    <br> <button (click)="gotoList()">Back</button>
   `,
   styles: [
   ]
@@ -29,17 +30,22 @@ export class JobDetailComponent implements OnInit {
     console.log('ONint')
   }
 
-  onPrevious(){
-    let previousId = this.departmentId-1
-    if(previousId>0 && previousId<5){
-      this.router.navigate(["/jobDetails",previousId])
-      }
+  // onPrevious(){
+  //   let previousId = this.departmentId-1
+  //   if(previousId>0 && previousId<5){
+  //     this.router.navigate(["/jobDetails",previousId])
+  //   }
+  // }
+
+  gotoList(){
+    let selectedId = this.departmentId ? this.departmentId : null
+    this.router.navigate(['../',{id:selectedId}],{relativeTo:this.route})
   }
 
-  onNext(){
-    let nextId = +this.departmentId + +1
-    if(nextId>0 && nextId<5){
-    this.router.navigate(["/jobDetails",nextId])
-    }
-  }
+  // onNext(){
+  //   let nextId = +this.departmentId + +1
+  //   if(nextId>0 && nextId<5){
+  //   this.router.navigate(["/jobDetails",nextId])    
+  // }
+  // }
 }

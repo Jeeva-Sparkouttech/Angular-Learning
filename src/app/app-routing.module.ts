@@ -10,8 +10,8 @@ import { JobListComponent } from './job-list/job-list.component';
 const routes: Routes = [{path :'',component:AppComponent,pathMatch:'full'}
   ,{path:'employeeDetails' , component : EmployeeDetailComponent},
 {path:'employeeList' , component : EmployeeListComponent},
-{path:'jobDetails',component:JobListComponent},
-{path : 'jobDetails/:id',component:JobDetailComponent},
+{path:'jobDetails-relative',component:JobListComponent},
+{path : 'jobDetails-relative/:id',component:JobDetailComponent},
 {path:"**",component:PageNotFoundComponent}];
 
 @NgModule({
