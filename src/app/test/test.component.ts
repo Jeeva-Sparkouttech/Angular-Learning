@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-test',//can use it with html tag <app-test></app-test>
@@ -22,19 +22,26 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   //   font-weight : bold;
   // }
   // `]
+
+  encapsulation : ViewEncapsulation.Emulated
+   //by default it's emulated and can be changed to None,ShadowDom
 })
 export class TestComponent implements OnInit {
   //component interaction
-  @Input() public parentData:any //syntax1
+  //@Input() public parentData:any //syntax1
   @Input('parentData') public inputData:any //syntax2
 
-  @Output() public childEvent = new EventEmitter()
+  //@Output() public childEvent = new EventEmitter()
+  //@Output() public childEvent = new EventEmitter<{id : number ,highlight : string }>()
+  @Output('c_event') public childEvent = new EventEmitter<{id : number ,highlight : string }>()
+
+  @ViewChild('viewchild',{static : true}) public vc !: ElementRef //static:true - if you use `vc` inside ngOnInit()
 
   public name = ""
   public text = "WELCOME TO SAMPLE ANGULAR WEB APP  !"
   public pipe = "Different kinds of pipes"
   public url = window.location.href
-  public myId = "328"
+  public myId :  number = 328
   public cbind = "class-bind"
   public highlight = "orange"
   public event_bind = " "
@@ -86,7 +93,8 @@ export class TestComponent implements OnInit {
   }
 
   fireEvent(){
-    this.childEvent.emit('output data from child to parent')
+    this.childEvent.emit({id : this.myId , highlight : this.vc.nativeElement.value })
+    console.log("ElementRef",this.vc.nativeElement.value)
   }
 
   ngIfVisible(){

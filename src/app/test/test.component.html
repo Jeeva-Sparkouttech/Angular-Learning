@@ -6,10 +6,13 @@
 
 <h2>Property binding</h2>
 <!-- interpolation -->
-<input id="{{myId}}" type=text value="text1">
+<input id="{{myId}}" type=text value="text1" #input>
 <!-- property binding syntax-->
 <!-- <input [disabled]="isDisabled" [id]="myId" type=text value="text2"> -->
 <input bind-disabled="isDisabled" [id]="myId" type=text value="text2">
+
+<h2 [innerText]="'hello'"></h2>
+<h2 [innerText]="input.value"></h2>
 <p>___________________________________________________________________________________________</p>
 
 <!-- class binding -->
@@ -100,6 +103,9 @@
 
 <h2>Component interaction</h2>
 <h3>{{inputData}}</h3>
+-----
+<h2>@viewChild</h2>
+<input type="text" value="jeeva" #viewchild> ----- <br>
 <button (click)="fireEvent()">Send event to parent - see page bottom</button>
 <p>___________________________________________________________________________________________</p>
 

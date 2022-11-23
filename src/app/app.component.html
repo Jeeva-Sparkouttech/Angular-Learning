@@ -1,5 +1,5 @@
 <h1>Angular Learning</h1>
-<app-test (childEvent)="message=$event" [parentData]="data">
+<app-test (c_event)="message=$event" [parentData]="data">
 </app-test>
 
 <!-- <app-employee-list></app-employee-list> -->
@@ -18,4 +18,5 @@
 <router-outlet></router-outlet>
 
 <p>**********************************************</p>
-<h3>{{message}}</h3>
+<!-- <h3>{{message.id}} -- {{message.highlight}}</h3> -->
+<h3>{{message | json}}</h3>
